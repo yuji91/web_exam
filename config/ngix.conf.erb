@@ -25,7 +25,7 @@ http {
 	client_body_timeout 5;
 
 	upstream app_server {
-		server unix:/tmp/nginx.socket fail_timeout=0;
+		server /Users/saitouhitoha/blog_app/tmp/nginx.socket fail_timeout=0;
  	}
 
 	server {
