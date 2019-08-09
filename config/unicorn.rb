@@ -1,17 +1,14 @@
+=begin
 require 'fileutils'
 preload_app true
 timeout 5
 worker_processes 4
-listen '/Users/saitouhitoha/blog_app/tmp/nginx.socket', backlog: 1024
+listen '/tmp/nginx.socket', backlog: 1024
 
 before_fork do |server,worker|
-	FileUtils.touch('/Users/saitouhitoha/blog_app/tmp/app-initialized')
+	FileUtils.touch('/tmp/app-initialized')
 end
-
-
-
-
-=begin
+=end
 worker_processes Integer(ENV["WEB_CONCURRENCY"] || 3)
 timeout 15
 preload_app true
@@ -40,4 +37,3 @@ end
 
 stderr_path File.expand_path('log/unicorn.log', ENV['RAILS_ROOT'])
 stdout_path File.expand_path('log/unicorn.log', ENV['RAILS_ROOT'])
-=end
