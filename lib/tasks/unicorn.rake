@@ -31,7 +31,6 @@ namespace :unicorn do
     sh "pstree '#{unicorn_pid}'"
   end
 
-  # Helpers
   def unicorn_signal signal
     Process.kill signal, unicorn_pid
   end
@@ -43,4 +42,5 @@ namespace :unicorn do
       raise "Unicorn does not seem to be running"
     end
   end
+
 end
