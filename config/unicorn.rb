@@ -27,7 +27,7 @@ end
 stderr_path File.expand_path('log/unicorn.log', ENV['RAILS_ROOT'])
 stdout_path File.expand_path('log/unicorn.log', ENV['RAILS_ROOT'])
 
-#web: bin/start-nginx bundle exec unicorn -c config/unicorn.rb
+web: bin/start-nginx bundle exec unicorn -c config/unicorn.rb
 
 require 'fileutils'
 preload_app true
